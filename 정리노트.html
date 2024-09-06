@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정리 노트</title>
+</head>
+<body>
+  <pre>
+    package pkg1.service;
+
+
+
+    public class TryCatchService{
+      private Scanner sc = new Scanner(System.in)
+    
+      public void test1(){
+        
+        Exception : 코드로 해결 가능한 에러
+        NullPointerException : 참조하고 있는 객체가 없는데 객체의 필드/메서드를 호출할 때 던져지는 예외
+        ArrayIndexOutOfBoundsException : 배열의 index 범위를 초과한 경우 던져지는 예외
+        InputMismatchException : 스캐너 입력 시 next 자료형으로 읽어오는 값과 입력된 값의 자료형이 다를 때
+        
+        
+        try - catch : 예외 처리 구문
+        try{ } : 예외가 발생할 가능성이 있는 코드를 { } 내부에 작성해서 한번 해보는 느낌
+        catch(예외 참조 변수) { } : try에서 던져진 예외를 ()에 작성된 참조 변수로 잡아서 처리하는 구문
+        예시
+        try{
+          System.out.println("정수 입력 1 :");
+          int num1 = sc.nextInt();
+
+          System.out.printlf("정수 입력 2 : ");
+          int num2 = sc.nextInt();
+
+          System.out.println("합계 : " + (num1 + num2));
+        } catch(예외참조변수 InputMisMatchException e){
+          try구문에서 발생할 수 있는 예외 = 입력할 때 정수를 입력하지 않음
+          그럴때 catch 구문 예외참조변수가 예외 상황을 캐치해서 혼내줌
+            System.out.println("정수만 입력하라고");
+          catch 구문 내에는 e.printStackTrace() 를 써서 콘솔에 예외 발생 원인을 출력하게 해준다
+          (안해도 되긴함 ㅎㅎ! 근데 확인용으로 조음)
+        
+          catch 구문을 이어서 예외를 계속 넣을 수 있다!
+
+        } catch(ArithmeticException e){ // 산술적 오류 제외해주는 예외 참조변수
+          System.out.println("0으로 나눌 수 없습니다!!!!!!!!");
+        }
+    
+    
+    
+        
+      }
+    
+    }
+
+  </pre>
+
+</body>
+</html>
